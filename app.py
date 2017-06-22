@@ -47,23 +47,12 @@ def processRequest(req):
     res = makeWebhookResult(data)
     return res
 
-
-def makeYqlQuery(req):
-    result = req.get("result")
-    parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    if city is None:
-        return None
-
-    return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + city + "')"
-
-
 def makeWebhookResult(data):
     query = data.get('coord')
 
     # print(json.dumps(item, indent=4))
 
-    speech = "Request ID is " + query.get('id') + "."
+    speech = "Request ID is " + query.get('lon') + "."
     
     print("Response:")
     print(speech)
