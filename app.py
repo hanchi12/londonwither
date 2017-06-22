@@ -40,13 +40,8 @@ def processRequest(req):
     if req.get("result").get("action") != "yahooWeatherForecast":
         return {}
     
-    baseurl = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text=%27%22%20+%20manila%20+%20%22%27)&format=json"
+    baseurl = "http://samples.openweathermap.org/data/2.5/weather?zip=01485,ph&appid=66910cc54f55f6bc8de8dc666ccb3120"
     
-    yql_query = makeYqlQuery(req)
-    
-    if yql_query is None:
-        return {}
-
     result = urlopen(baseurl).read()
     data = json.loads(result)
     res = makeWebhookResult(data)
