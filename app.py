@@ -48,17 +48,16 @@ def processRequest(req):
     return res
 
 def makeWebhookResult(data):
-    query = data.get('coord')
 
     # print(json.dumps(item, indent=4))
 
-    speech = "Request ID is " + query.get('lon') + "."
+    speech = "Request Message."
     
     print("Response:")
     print(speech)
 
     return {
-        "speech": "test",
+        "speech": speech,
         "displayText": speech,
         # "data": data,
         # "contextOut": [],
