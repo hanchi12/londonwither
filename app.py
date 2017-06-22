@@ -74,7 +74,7 @@ def makeWebhookResult(data):
     print(speech)
 
     return {
-        "speech": speech,
+        "speech": "test",
         "displayText": speech,
         # "data": data,
         # "contextOut": [],
