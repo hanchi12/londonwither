@@ -48,10 +48,10 @@ def processRequest(req):
     return res
 
 def makeWebhookResult(data):
-
+query = data.get('message')
     # print(json.dumps(item, indent=4))
 
-    speech = "Request Message."
+    speech = "Request Message " + query + " ..."
     
     print("Response:")
     print(speech)
