@@ -53,7 +53,7 @@ def makeWebhookResult(data):
     
     # print(json.dumps(item, indent=4))
 
-    speech = "Request Message "+ "xxx" + " ..."
+    speech = "Request Message "+ query.get('lat') + " ..."
     
     print("Response:")
     print(speech)
