@@ -49,11 +49,7 @@ def processRequest(req):
 
 def makeWebhookResult(data):
     
-    query = data.get('coord')
-    
     # print(json.dumps(item, indent=4))
-
-    speech = "Request Message "+ query.get('lat') + " ..."
     
     print("Response:")
     print(speech)
