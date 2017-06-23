@@ -61,6 +61,8 @@ def makeWebhookResult(data):
 
     speech = query.get('lat')+"...."
 
+    speech="ayt ayt"
+    
     print("Response:")
     print(speech)
 
