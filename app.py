@@ -38,9 +38,10 @@ def webhook():
 def processRequest(req):
     if req.get("result").get("action") != "YAPYAP":
         return {}
+    
     return {
-        "speech": speech,
-        "displayText": speech,
+        "speech": "batista bomb!",
+        "displayText": "batista bomb!",
         # "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
