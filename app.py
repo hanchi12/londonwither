@@ -43,7 +43,7 @@ def processRequest(req):
 
     json_object=r.json()
 
-    temp = json_object['main']['temp']
+    temp = str( json_object['main']['temp'] )
     
     return {
         "speech": temp,
