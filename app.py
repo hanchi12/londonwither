@@ -39,9 +39,15 @@ def processRequest(req):
     if req.get("result").get("action") != "YAPYAP":
         return {}
     
+    r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=66910cc54f55f6bc8de8dc666ccb3120')
+
+    json_object=r.json()
+
+    temp = json_object['main']['temp']
+    
     return {
-        "speech": "batista bomb!",
-        "displayText": "batista bomb!",
+        "speech": temp,
+        "displayText": temp,
         # "data": data,
         # "contextOut": [],
         "source": "apiai-weather-webhook-sample"
