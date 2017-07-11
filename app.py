@@ -10,9 +10,9 @@ from urllib.error import HTTPError
 
 import json
 import os
+import request
 
 from flask import Flask
-from flask import request
 from flask import make_response
 
 # Flask app should start in global layout
